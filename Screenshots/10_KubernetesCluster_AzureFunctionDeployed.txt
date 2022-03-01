@@ -1,0 +1,35 @@
+func kubernetes deploy --name $Env:AZURE_AKS_NAME --image-name nappcontainerregistry.azurecr.io/neighborlyappimage:v1 —polling-interval 3 —cooldown-period 5
+
+secret/nappkubernetescluster created
+secret/func-keys-kube-secret-nappkubernetescluster created
+serviceaccount/nappkubernetescluster-function-keys-identity-svc-act created
+role.rbac.authorization.k8s.io/functions-keys-manager-role created
+rolebinding.rbac.authorization.k8s.io/nappkubernetescluster-function-keys-identity-svc-act-functions-keys-manager-rolebinding created
+service/nappkubernetescluster-http created
+deployment.apps/nappkubernetescluster-http created
+deployment.apps/nappkubernetescluster created
+scaledobject.keda.sh/nappkubernetescluster created
+Waiting for deployment "nappkubernetescluster-http" rollout to finish: 0 of 1 updated replicas are available...
+deployment "nappkubernetescluster-http" successfully rolled out
+        createAdvertisement - [httpTrigger]
+        Invoke url: http://20.79.241.87/api/createadvertisement
+
+        deleteAdvertisement - [httpTrigger]
+        Invoke url: http://20.79.241.87/api/deleteadvertisement
+
+        getAdvertisement - [httpTrigger]
+        Invoke url: http://20.79.241.87/api/getadvertisement
+
+        getAdvertisements - [httpTrigger]
+        Invoke url: http://20.79.241.87/api/getadvertisements
+
+        getPost - [httpTrigger]
+        Invoke url: http://20.79.241.87/api/getpost
+
+        getPosts - [httpTrigger]
+        Invoke url: http://20.79.241.87/api/getposts
+
+        updateAdvertisement - [httpTrigger]
+        Invoke url: http://20.79.241.87/api/updateadvertisement
+
+        Master key: BSJNEGaC6Pdm4LgYYjVvqpN46r2zw8mu8Fq3ZOaet75b3mzRP8zvDw==
