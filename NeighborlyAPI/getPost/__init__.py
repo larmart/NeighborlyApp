@@ -17,7 +17,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             database = client[os.environ["MongoDBDatabase"]]
             collection = database['posts']
 
-            query = {'_id': ObjectId(id)}
+            query = {'_id': str(id)}
             result = collection.find_one(query)
             result = dumps(result)
 
