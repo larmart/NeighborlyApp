@@ -21,7 +21,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             database = client[os.environ["MongoDBDatabase"]]
             collection = database['advertisements']
            
-            query = {'_id': str(id)}
+            query = {'_id': ObjectId(id)}
             result = collection.find_one(query)
             print("----------result--------")
 
